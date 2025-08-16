@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons, Data.DB,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Imaging.pngimage;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Imaging.pngimage, View.Login;
 
 type
   TViewPrincipal = class(TForm)
@@ -60,8 +60,12 @@ type
     EditProduto: TEdit;
     pnlImagem: TPanel;
     ImageProduto: TImage;
+    PanelMain: TPanel;
+    PanelPDV: TPanel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
-    { Private declarations }
+    FViewLogin: TViewLogin;
   public
     { Public declarations }
   end;
@@ -72,5 +76,17 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TViewPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  FViewLogin.Free;
+end;
+
+procedure TViewPrincipal.FormCreate(Sender: TObject);
+begin
+  FViewLogin := TViewLogin.Create(nil);
+  FViewLogin.Parent := PanelMain;
+  FViewLogin.Show;
+end;
 
 end.

@@ -2,7 +2,8 @@ program CryfPDV;
 
 uses
   Vcl.Forms,
-  View.Principal in 'src\View\View.Principal.pas' {ViewPrincipal};
+  View.Principal in 'src\View\View.Principal.pas' {ViewPrincipal},
+  View.Login in 'src\View\View.Login.pas' {ViewLogin};
 
 {$R *.res}
 

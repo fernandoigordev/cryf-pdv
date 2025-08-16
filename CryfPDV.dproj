@@ -131,6 +131,10 @@
             <Form>ViewPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\View\View.Login.pas">
+            <Form>ViewLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -157,7 +161,7 @@
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
-                <DeployFile LocalName="Win32\Debug\CryfPDV.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="bin\CryfPDV.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>CryfPDV.exe</RemoteName>
                         <Overwrite>true</Overwrite>
