@@ -64,8 +64,10 @@ type
     PanelPDV: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
     FViewLogin: TViewLogin;
+    procedure ConfigurarBotoesAtalho;
   public
     { Public declarations }
   end;
@@ -77,6 +79,16 @@ implementation
 
 {$R *.dfm}
 
+procedure TViewPrincipal.ConfigurarBotoesAtalho;
+begin
+  btnCancelarOperacao.Caption := 'Cancelar operação' + #13 + '(ESC)';
+  btnConsultarPreco.Caption := 'Consultar preço' + #13 + '(F4)';
+  btnAbrirCaixa.Caption := 'Abrir caixa' + #13 + '(F2)';
+  btnCancelarVenda.Caption := 'Cancelar venda' + #13 + '(F6)';
+  btnCancelarItem.Caption := 'Cancelar item' + #13 + '(F1)';
+  btnMaisFuncoes.Caption := 'Mais funções' + #13 + '(F12)';
+end;
+
 procedure TViewPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   FViewLogin.Free;
@@ -87,6 +99,11 @@ begin
   FViewLogin := TViewLogin.Create(nil);
   FViewLogin.Parent := PanelMain;
   FViewLogin.Show;
+end;
+
+procedure TViewPrincipal.FormShow(Sender: TObject);
+begin
+  ConfigurarBotoesAtalho;
 end;
 
 end.

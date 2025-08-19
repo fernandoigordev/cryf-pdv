@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Imaging.pngimage;
 
 type
   TViewLogin = class(TForm)
@@ -27,6 +28,7 @@ type
     PanelEntrar: TPanel;
     Shape3: TShape;
     SpeedButton1: TSpeedButton;
+    ImageLogo: TImage;
     procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }

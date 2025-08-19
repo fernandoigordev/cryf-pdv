@@ -15,6 +15,7 @@ object ViewPrincipal: TViewPrincipal
   Position = poDesktopCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object PanelMain: TPanel
     Left = 0
@@ -31,10 +32,6 @@ object ViewPrincipal: TViewPrincipal
     ParentBackground = False
     ShowCaption = False
     TabOrder = 0
-    ExplicitLeft = 13
-    ExplicitTop = 13
-    ExplicitWidth = 360
-    ExplicitHeight = 470
     object PanelPDV: TPanel
       Left = 5
       Top = 5
@@ -52,9 +49,6 @@ object ViewPrincipal: TViewPrincipal
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitLeft = 10
-      ExplicitTop = 13
-      ExplicitHeight = 60
       object pnlBottom: TPanel
         AlignWithMargins = True
         Left = 0
@@ -80,8 +74,6 @@ object ViewPrincipal: TViewPrincipal
         ParentFont = False
         ShowCaption = False
         TabOrder = 0
-        ExplicitLeft = 5
-        ExplicitTop = 576
         object PnlCancelarOperacao: TPanel
           AlignWithMargins = True
           Left = 5
@@ -367,9 +359,6 @@ object ViewPrincipal: TViewPrincipal
         BevelOuter = bvNone
         ShowCaption = False
         TabOrder = 1
-        ExplicitLeft = 5
-        ExplicitTop = 65
-        ExplicitHeight = 611
         object pnlOperacoes: TPanel
           Left = 714
           Top = 0
@@ -379,7 +368,6 @@ object ViewPrincipal: TViewPrincipal
           BevelOuter = bvNone
           ShowCaption = False
           TabOrder = 0
-          ExplicitHeight = 611
           object pnlTotalCompra: TPanel
             Left = 0
             Top = 441
@@ -389,7 +377,6 @@ object ViewPrincipal: TViewPrincipal
             BevelOuter = bvNone
             ShowCaption = False
             TabOrder = 0
-            ExplicitTop = 541
             object lbTituloTotalCompra: TLabel
               Left = 0
               Top = 0
@@ -461,7 +448,6 @@ object ViewPrincipal: TViewPrincipal
             BevelOuter = bvNone
             ShowCaption = False
             TabOrder = 1
-            ExplicitTop = 471
             object lblTituloSubtotal: TLabel
               Left = 0
               Top = 0
@@ -533,7 +519,6 @@ object ViewPrincipal: TViewPrincipal
             BevelOuter = bvNone
             ShowCaption = False
             TabOrder = 2
-            ExplicitTop = 401
             object lblTituloQuantidade: TLabel
               Left = 0
               Top = 0
@@ -608,7 +593,6 @@ object ViewPrincipal: TViewPrincipal
             BevelOuter = bvNone
             ShowCaption = False
             TabOrder = 3
-            ExplicitTop = 331
             object lbTituloPreco: TLabel
               Left = 0
               Top = 0
@@ -680,7 +664,6 @@ object ViewPrincipal: TViewPrincipal
             BevelOuter = bvNone
             ShowCaption = False
             TabOrder = 4
-            ExplicitTop = 261
             object lbTituloProduto: TLabel
               Left = 0
               Top = 0
@@ -759,7 +742,6 @@ object ViewPrincipal: TViewPrincipal
             Padding.Bottom = 10
             ShowCaption = False
             TabOrder = 5
-            ExplicitHeight = 261
             object ImageProduto: TImage
               Left = 100
               Top = 10
@@ -16168,7 +16150,6 @@ object ViewPrincipal: TViewPrincipal
           Padding.Bottom = 5
           ShowCaption = False
           TabOrder = 1
-          ExplicitHeight = 611
           object DBGrid1: TDBGrid
             Left = 5
             Top = 5
@@ -16176,12 +16157,56 @@ object ViewPrincipal: TViewPrincipal
             Height = 501
             Align = alClient
             BorderStyle = bsNone
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWhite
+            Font.Height = -16
+            Font.Name = 'Roboto'
+            Font.Style = []
+            Options = [dgTitles, dgRowLines, dgTabs, dgRowSelect, dgMultiSelect, dgTitleHotTrack]
+            ParentFont = False
             TabOrder = 0
             TitleFont.Charset = DEFAULT_CHARSET
-            TitleFont.Color = clWhite
-            TitleFont.Height = -40
+            TitleFont.Color = clBlack
+            TitleFont.Height = -16
             TitleFont.Name = 'Roboto'
             TitleFont.Style = []
+            Columns = <
+              item
+                Expanded = False
+                Title.Caption = 'C'#243'digo'
+                Width = 90
+                Visible = True
+              end
+              item
+                Expanded = False
+                Title.Caption = 'Descri'#231#227'o'
+                Width = 250
+                Visible = True
+              end
+              item
+                Alignment = taRightJustify
+                Expanded = False
+                Title.Alignment = taRightJustify
+                Title.Caption = 'Valor unit'#225'rio'
+                Width = 120
+                Visible = True
+              end
+              item
+                Alignment = taRightJustify
+                Expanded = False
+                Title.Alignment = taRightJustify
+                Title.Caption = 'Quantidade'
+                Width = 120
+                Visible = True
+              end
+              item
+                Alignment = taRightJustify
+                Expanded = False
+                Title.Alignment = taRightJustify
+                Title.Caption = 'Total'
+                Width = 120
+                Visible = True
+              end>
           end
         end
       end
@@ -16202,8 +16227,6 @@ object ViewPrincipal: TViewPrincipal
         ParentBackground = False
         ParentFont = False
         TabOrder = 2
-        ExplicitLeft = 5
-        ExplicitTop = 5
       end
     end
   end
